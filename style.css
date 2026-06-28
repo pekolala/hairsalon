@@ -417,14 +417,12 @@ nav a:hover {
   font-size: 1.2rem;
   color: var(--color-accent);
   margin-bottom: var(--spacing-xs);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 .faq-question::before {
-  content: 'Q.';
+  content: 'Q. ';
   font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 .faq-answer {

@@ -3,304 +3,659 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMIÈRE | 高級感溢れるミニマリズムな美容室</title>
-    <meta name="description" content="LUMIÈREは、ホワイトとゴールドを基調とした洗練された空間で、最高のヘアスタイルをご提案する高級美容室です。完全予約制のプライベートな時間をお楽しみください。">
-    <meta name="keywords" content="美容室, 高級, ミニマリズム, ヘアスタイル, LUMIÈRE, ルミエール, 美容院, 東京, 南青山, 表参道">
+    <title>LUMIÈRE | 南青山・表参道の洗練されたミニマリズム美容室</title>
+    <meta name="description" content="南青山の静寂に佇むヘアサロンLUMIÈRE（ルミエール）。引き算の美学と確かな技術で、お客様本来の美しさを最大限に引き出すプライベートサロン。完全予約制。">
+    <meta name="keywords" content="美容室, 高級, ミニマリズム, ヘアスタイル, LUMIÈRE, ルミエール, 美容院, 南青山, 表参道, 骨格補正カット, 髪質改善">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="LUMIÈRE | 高級感溢れるミニマリズムな美容室">
-    <meta property="og:description" content="洗練されたタイポグラフィと余白を活かした贅沢な空間。あなたの美しさを最大限に引き出します。">
-    <meta property="og:image" content="assets/hero.png">
+    <meta property="og:title" content="LUMIÈRE | 南青山・表参道の洗練されたミニマリズム美容室">
+    <meta property="og:description" content="南青山の静寂に佇むヘアサロンLUMIÈRE。引き算の美学と確かな技術で、お客様本来の美しさを最大限に引き出します。">
+    <meta property="og:image" content="assets/hero.webp">
     <meta property="og:type" content="website">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@200;300;400;500;600&family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="header" role="banner">
-        <div class="container header-inner">
-            <a href="#" class="logo" aria-label="LUMIÈRE ホームページへ">
-                <img src="assets/logo.png" alt="LUMIÈRE ロゴ" loading="eager">
+
+    <!-- Smooth Scroll Wrapper -->
+    <div id="app-wrapper">
+
+        <!-- Header -->
+        <header id="header" role="banner">
+            <div class="container header-inner">
+                <a href="#" class="logo" aria-label="LUMIÈRE ホームページへ">
+                    <span class="logo-text">LUMIÈRE</span>
+                </a>
+                
+                <nav role="navigation" aria-label="メインナビゲーション" id="nav-menu">
+                    <ul id="nav-list">
+                        <li><a href="#about"><span class="nav-num">01</span><span>ABOUT</span></a></li>
+                        <li><a href="#services"><span class="nav-num">02</span><span>MENU</span></a></li>
+                        <li><a href="#before-after"><span class="nav-num">03</span><span>BEFORE / AFTER</span></a></li>
+                        <li><a href="#staff"><span class="nav-num">04</span><span>STAFF</span></a></li>
+                        <li><a href="#gallery"><span class="nav-num">05</span><span>COLLECTION</span></a></li>
+                        <li><a href="#reviews"><span class="nav-num">06</span><span>REVIEWS</span></a></li>
+                        <li><a href="#access"><span class="nav-num">07</span><span>ACCESS</span></a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#contact" class="btn btn-nav">RESERVE</a>
+                    <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="メニューを開く">
+                        <span class="menu-line line-1"></span>
+                        <span class="menu-line line-2"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Fullscreen Menu Overlay -->
+        <div class="menu-overlay" id="menu-overlay">
+            <div class="overlay-bg"></div>
+            <div class="overlay-content">
+                <nav class="overlay-nav">
+                    <ul>
+                        <li><a href="#about"><span class="overlay-num">01</span><span class="overlay-text">CONCEPT</span></a></li>
+                        <li><a href="#services"><span class="overlay-num">02</span><span class="overlay-text">SERVICES</span></a></li>
+                        <li><a href="#before-after"><span class="overlay-num">03</span><span class="overlay-text">BEFORE / AFTER</span></a></li>
+                        <li><a href="#staff"><span class="overlay-num">04</span><span class="overlay-text">STYLISTS</span></a></li>
+                        <li><a href="#gallery"><span class="overlay-num">05</span><span class="overlay-text">GALLERY</span></a></li>
+                        <li><a href="#reviews"><span class="overlay-num">06</span><span class="overlay-text">CLIENT REVIEWS</span></a></li>
+                        <li><a href="#access"><span class="overlay-num">07</span><span class="overlay-text">ACCESS</span></a></li>
+                    </ul>
+                </nav>
+                <div class="overlay-footer">
+                    <div class="overlay-info">
+                        <p class="overlay-address">東京都港区南青山 0-0-0 AOYAMA BLDG 1F</p>
+                        <p class="overlay-tel">03-0000-0000</p>
+                    </div>
+                    <div class="overlay-sns">
+                        <a href="#" aria-label="LINE"><i class="fab fa-line"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <!-- Cinematic Hero Section -->
+            <section class="hero" id="home">
+                <div class="swiper hero-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="hero-slide-bg">
+                                <img src="assets/hero.webp" alt="LUMIÈRE メインビジュアル 1">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="hero-slide-bg">
+                                <img src="assets/salon_interior.webp" alt="LUMIÈRE サロン内観 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-overlay-tint"></div>
+                <div class="hero-content">
+                    <div class="hero-subtitle reveal-text">PURITY OF BEAUTY</div>
+                    <h1 class="reveal-text delay-1">Silence & Light</h1>
+                    <p class="reveal-text delay-2"><span class="inline-block">無駄を削ぎ落とした静寂のなかで、</span><span class="inline-block">あなたの内に眠る光を解き放つ。</span></p>
+                    <div class="hero-cta reveal-item delay-3">
+                        <a href="#contact" class="btn btn-outline-white">Book an Experience</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span class="scroll-text">SCROLL</span>
+                    <span class="scroll-line"></span>
+                </div>
+            </section>
+
+            <!-- Concept Section (About) -->
+            <section class="section-padding concept-section" id="about">
+                <div class="container">
+                    <div class="grid-2col align-center">
+                        <div class="concept-visual reveal-zoom">
+                            <img src="assets/salon_interior.webp" alt="洗練された美容室の内装" loading="lazy">
+                            <div class="decor-border"></div>
+                        </div>
+                        <div class="concept-text">
+                            <div class="section-meta reveal-fade">01 / CONCEPT</div>
+                            <h2 class="reveal-fade delay-1">Minimalist Luxury</h2>
+                            <p class="concept-p reveal-fade delay-2">
+                                LUMIÈRE（ルミエール）は、南青山の閑静な一角に佇む、引き算の美学を追求したヘアサロンです。
+                                ホワイト、グレー、ベージュを基調とした極限までシンプルに整えられた空間は、日常の喧騒から精神を解放する聖域。
+                                計算し尽くされた空間と光の設計の中で、私たちは一人ひとりの骨格・髪質・パーソナリティに深く向き合います。
+                            </p>
+                            <p class="concept-p reveal-fade delay-3">
+                                装飾を足すことではなく、無駄を削ぎ落とすこと。
+                                それこそが、あなた本来の持つ「最も純粋な美しさ」を最大限に引き出すと信じています。
+                                完全予約制の静寂の中、極上のヘアメイク体験をお約束します。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Menu / Services Section -->
+            <section class="section-padding menu-section" id="services">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="section-meta reveal-fade">02 / SERVICES</div>
+                        <h2 class="reveal-fade">Exclusive Menu</h2>
+                    </div>
+                    
+                    <div class="menu-list-container">
+                        <!-- Menu Item 1 -->
+                        <div class="menu-row reveal-fade">
+                            <div class="menu-info">
+                                <span class="menu-num">01</span>
+                                <h3 class="menu-name">Signature Cut</h3>
+                                <p class="menu-desc">骨格、生え癖、毛流れを徹底的に分析し、乾かすだけで美しくまとまる再現性の極めて高いカット。髪を彫刻のように削り出し、骨格の美しさを引き出します。</p>
+                            </div>
+                            <div class="menu-price-block">
+                                <span class="menu-price">¥12,000</span>
+                                <span class="menu-time">90 min</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Menu Item 2 -->
+                        <div class="menu-row reveal-fade">
+                            <div class="menu-info">
+                                <span class="menu-num">02</span>
+                                <h3 class="menu-name">Lustre Organic Color</h3>
+                                <p class="menu-desc">オーガニック成分を配合した薬剤を使用し、頭皮への負担を抑えながら、圧倒的な透明感と艶を宿すプレミアムカラー。髪の内部に水分を閉じ込めます。</p>
+                            </div>
+                            <div class="menu-price-block">
+                                <span class="menu-price">¥15,000</span>
+                                <span class="menu-time">120 min</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Menu Item 3 -->
+                        <div class="menu-row reveal-fade">
+                            <div class="menu-info">
+                                <span class="menu-num">03</span>
+                                <h3 class="menu-name">Silk Acid Treatment</h3>
+                                <p class="menu-desc">最新の酸熱テクノロジーとナノスチームを用い、髪の芯部からケラチンを結合し直す髪質改善トリートメント。うねりやパサつきを抑え、指通りシルクのような質感へ。</p>
+                            </div>
+                            <div class="menu-price-block">
+                                <span class="menu-price">¥18,000</span>
+                                <span class="menu-time">90 min</span>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 4 -->
+                        <div class="menu-row reveal-fade">
+                            <div class="menu-info">
+                                <span class="menu-num">04</span>
+                                <h3 class="menu-name">Head Spa Therapy</h3>
+                                <p class="menu-desc">クレイと厳選アロマオイルを用いた、フルフラットのYUMEベッドで行う極上のヘッドスパ。頭皮のディープクレンジングとリンパマッサージで、極上のリラックスへ導きます。</p>
+                            </div>
+                            <div class="menu-price-block">
+                                <span class="menu-price">¥10,000</span>
+                                <span class="menu-time">60 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Numbers / Counter Section (実績) -->
+            <section class="section-padding numbers-section">
+                <div class="container">
+                    <div class="numbers-grid">
+                        <div class="number-item reveal-fade">
+                            <div class="number-val" data-target="98.4">0</div>
+                            <div class="number-label">顧客満足度 (%)</div>
+                        </div>
+                        <div class="number-item reveal-fade delay-1">
+                            <div class="number-val" data-target="12000" data-suffix="+">0</div>
+                            <div class="number-label">年間施術実績 (名)</div>
+                        </div>
+                        <div class="number-item reveal-fade delay-2">
+                            <div class="number-val" data-target="92.1">0</div>
+                            <div class="number-label">リピート率 (%)</div>
+                        </div>
+                        <div class="number-item reveal-fade delay-3">
+                            <div class="number-val" data-target="15" data-suffix="Yrs">0</div>
+                            <div class="number-label">スタイリスト平均キャリア</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Before/After Slider Section -->
+            <section class="section-padding before-after-section" id="before-after">
+                <div class="container">
+                    <div class="grid-2col align-center">
+                        <div class="ba-text">
+                            <div class="section-meta reveal-fade">03 / TRANSFORMATION</div>
+                            <h2 class="reveal-fade delay-1">Before / After</h2>
+                            <p class="reveal-fade delay-2">
+                                LUMIÈREの髪質改善ヘアエステによる劇的な変化をご覧ください。
+                                最新の酸性ストレートおよび深層水分チャージシステムにより、パサつきやうねりのあった髪が、1回の施術でシルクのように光を反射する極上の質感へと生まれ変わります。
+                            </p>
+                            <p class="reveal-fade delay-3">
+                                触れるたびに満たされる、かつてない指通りと艶。私たちの技術は、その場限りの美しさではなく、数ヶ月先まで続く本質的な髪質の向上を目指します。
+                            </p>
+                        </div>
+                        
+                        <div class="ba-slider-container reveal-fade">
+                            <div class="ba-slider" id="ba-slider">
+                                <div class="ba-image img-before">
+                                    <img src="assets/before.webp" alt="施術前：パサつきとうねりのある髪">
+                                    <span class="ba-label label-before">BEFORE</span>
+                                </div>
+                                <div class="ba-image img-after" id="img-after">
+                                    <img src="assets/after.webp" alt="施術後：艶やかで真っ直ぐなシルク髪">
+                                    <span class="ba-label label-after">AFTER</span>
+                                </div>
+                                <div class="ba-handle" id="ba-handle">
+                                    <div class="ba-handle-line"></div>
+                                    <div class="ba-handle-button">
+                                        <i class="fa-solid fa-arrows-left-right"></i>
+                                    </div>
+                                    <div class="ba-handle-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staff Section (Cover Flow) -->
+            <section class="section-padding staff-section" id="staff">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <div class="section-meta reveal-fade">04 / EXPERTS</div>
+                        <h2 class="reveal-fade">Creative Stylists</h2>
+                    </div>
+                </div>
+                
+                <div class="staff-swiper-container reveal-fade">
+                    <div class="swiper staff-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Staff 1 -->
+                            <div class="swiper-slide staff-slide">
+                                <div class="staff-card-inner">
+                                    <div class="staff-card-img">
+                                        <img src="assets/staff_miyuki.webp" alt="Owner & Director - MIYUKI">
+                                    </div>
+                                    <div class="staff-card-info">
+                                        <span class="staff-role">OWNER / DIRECTOR</span>
+                                        <h3 class="staff-name">MIYUKI</h3>
+                                        <p class="staff-bio">表参道の有名サロンでディレクターを務めた後独立。骨格補正カットと髪質改善のスペシャリスト。独自の「引き算の美学」で多くの著名人の顧客を持つ。</p>
+                                        <div class="staff-sns">
+                                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff 2 -->
+                            <div class="swiper-slide staff-slide">
+                                <div class="staff-card-inner">
+                                    <div class="staff-card-img">
+                                        <img src="assets/staff_takumi.webp" alt="Top Stylist - TAKUMI">
+                                    </div>
+                                    <div class="staff-card-info">
+                                        <span class="staff-role">TOP STYLIST</span>
+                                        <h3 class="staff-name">TAKUMI</h3>
+                                        <p class="staff-bio">ロンドンでの海外研修経験を持つ。エッジの効いたショートボブや、日常に溶け込むカジュアルかつモードなデザインカットに定評がある。</p>
+                                        <div class="staff-sns">
+                                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff 3 -->
+                            <div class="swiper-slide staff-slide">
+                                <div class="staff-card-inner">
+                                    <div class="staff-card-img">
+                                        <img src="assets/staff_yuka.webp" alt="Color Specialist - YUKA">
+                                    </div>
+                                    <div class="staff-card-info">
+                                        <span class="staff-role">COLOR SPECIALIST</span>
+                                        <h3 class="staff-name">YUKA</h3>
+                                        <p class="staff-bio">色彩理論を極めたヘアカラー専門家。髪を傷ませない「イルミナダブルカラー」や、肌を最も美しく見せるパーソナルパーマカラーの開発を得意とする。</p>
+                                        <div class="staff-sns">
+                                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="swiper-button-next staff-next"></div>
+                        <div class="swiper-button-prev staff-prev"></div>
+                        <div class="swiper-pagination staff-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section (Masonry + Lightbox) -->
+            <section class="section-padding gallery-section" id="gallery">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="section-meta reveal-fade">05 / COLLECTION</div>
+                        <h2 class="reveal-fade">Artistic Styles</h2>
+                    </div>
+                    
+                    <div class="gallery-masonry reveal-fade">
+                        <!-- Item 1 -->
+                        <div class="gallery-item-wrapper masonry-short" data-src="assets/gallery1.webp" data-index="0">
+                            <div class="gallery-img-box">
+                                <img src="assets/gallery1.webp" alt="洗練されたハイライトボブスタイル" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-info-text">
+                                        <span class="gallery-cat">HIGHLIGHT BOB</span>
+                                        <h3 class="gallery-title">Lumière Bob</h3>
+                                    </div>
+                                    <span class="gallery-plus">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="gallery-item-wrapper masonry-tall" data-src="assets/gallery2.webp" data-index="1">
+                            <div class="gallery-img-box">
+                                <img src="assets/gallery2.webp" alt="ナチュラルなハンサムショートスタイル" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-info-text">
+                                        <span class="gallery-cat">HANDSOME SHORT</span>
+                                        <h3 class="gallery-title">Minimal Silhouette</h3>
+                                    </div>
+                                    <span class="gallery-plus">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="gallery-item-wrapper masonry-medium" data-src="assets/gallery3.webp" data-index="2">
+                            <div class="gallery-img-box">
+                                <img src="assets/gallery3.webp" alt="エッジの効いた黒髪切りっぱなしボブ" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-info-text">
+                                        <span class="gallery-cat">STRAIGHT BOB</span>
+                                        <h3 class="gallery-title">Edge Classic</h3>
+                                    </div>
+                                    <span class="gallery-plus">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="gallery-item-wrapper masonry-tall" data-src="assets/gallery4.webp" data-index="3">
+                            <div class="gallery-img-box">
+                                <img src="assets/gallery4.webp" alt="艶やかなロングレイヤースタイル" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-info-text">
+                                        <span class="gallery-cat">LONG LAYER</span>
+                                        <h3 class="gallery-title">Silk Wave</h3>
+                                    </div>
+                                    <span class="gallery-plus">+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Google Reviews Section (お客様の声) -->
+            <section class="section-padding reviews-section" id="reviews">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <div class="section-meta reveal-fade">06 / CLIENTS</div>
+                        <h2 class="reveal-fade">Client Reviews</h2>
+                    </div>
+                    
+                    <div class="reviews-swiper-container reveal-fade">
+                        <div class="swiper reviews-swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Review 1 -->
+                                <div class="swiper-slide review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="review-comment">「今まで数多くの有名サロンに行きましたが、LUMIÈREさんが一番カットの再現性が高いです。乾かすだけで本当に綺麗に形が決まります。店内の静寂でミニマルな空間もとても癒されます。」</p>
+                                        <div class="review-author">
+                                            <div class="author-name">K. Minamoto</div>
+                                            <div class="author-meta">Google Local Guide • 1週間前</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 2 -->
+                                <div class="swiper-slide review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="review-comment">「酸性トリートメントを施術していただきました。ブリーチで傷んで広がっていた髪が、驚くほど真っ直ぐでサラサラになり、まさに『髪質が改善』されたのを実感しています。ゴールドの上品なアクセントがある内装も本当に素敵です。」</p>
+                                        <div class="review-author">
+                                            <div class="author-name">S. Asahina</div>
+                                            <div class="author-meta">Verified Customer • 3日前</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 3 -->
+                                <div class="swiper-slide review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="review-comment">「MIYUKIさんに担当していただきました。私の拙いカウンセリングから、髪質と好みを100%見抜いて提案してくださいました。予約は取りづらいですが、それだけの価値がある極上のプライベートサロンです。」</p>
+                                        <div class="review-author">
+                                            <div class="author-name">T. Hayashi</div>
+                                            <div class="author-meta">Verified Customer • 2週間前</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination reviews-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instagram Grid Section (デモ) -->
+            <section class="section-padding instagram-section">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="section-meta reveal-fade">FOLLOW US</div>
+                        <h2 class="reveal-fade">Instagram @lumiere_aoyama</h2>
+                    </div>
+                    
+                    <div class="instagram-grid reveal-fade">
+                        <a href="#" class="insta-item" aria-label="Instagramの投稿を見る">
+                            <img src="assets/gallery1.webp" alt="Instagram画像" loading="lazy">
+                            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                        </a>
+                        <a href="#" class="insta-item" aria-label="Instagramの投稿を見る">
+                            <img src="assets/salon_interior.webp" alt="Instagram画像" loading="lazy">
+                            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                        </a>
+                        <a href="#" class="insta-item" aria-label="Instagramの投稿を見る">
+                            <img src="assets/gallery2.webp" alt="Instagram画像" loading="lazy">
+                            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                        </a>
+                        <a href="#" class="insta-item" aria-label="Instagramの投稿を見る">
+                            <img src="assets/before.webp" alt="Instagram画像" loading="lazy">
+                            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                        </a>
+                        <a href="#" class="insta-item" aria-label="Instagramの投稿を見る">
+                            <img src="assets/gallery3.webp" alt="Instagram画像" loading="lazy">
+                            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                        </a>
+                        <a href="#" class="insta-item" aria-label="Instagramの投稿を見る">
+                            <img src="assets/gallery4.webp" alt="Instagram画像" loading="lazy">
+                            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Access Section -->
+            <section class="section-padding access-section" id="access">
+                <div class="container">
+                    <div class="grid-2col gap-lg align-center">
+                        <div class="access-info">
+                            <div class="section-meta reveal-fade">07 / LOCATION</div>
+                            <h2 class="reveal-fade delay-1">Access</h2>
+                            <p class="salon-name reveal-fade delay-1">LUMIÈRE Hair Salon</p>
+                            <p class="salon-address reveal-fade delay-2">
+                                〒107-0062 東京都港区南青山 0-0-0<br>
+                                AOYAMA BLDG 1F
+                            </p>
+                            <p class="salon-route reveal-fade delay-2">
+                                東京メトロ銀座線・半蔵門線・千代田線<br>
+                                <strong>「表参道駅」A4出口より徒歩5分</strong>
+                            </p>
+                            
+                            <table class="access-table reveal-fade delay-3">
+                                <tr>
+                                    <th>営業時間</th>
+                                    <td>平日 11:00 - 21:00 / 土日祝 10:00 - 19:00</td>
+                                </tr>
+                                <tr>
+                                    <th>定休日</th>
+                                    <td>毎週火曜日 / 第2・第3月曜日</td>
+                                </tr>
+                                <tr>
+                                    <th>電話番号</th>
+                                    <td>03-0000-0000</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="access-map reveal-fade">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4771645343653!2d139.7120921!3d35.665251100000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9fee70f285%3A0x4054b8b23563631c!2z6KGo5Y-C6YGT6aeF!5e0!3m2!1sja!2sjp!4v1778879064757!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="section-padding cta-section" id="contact">
+                <div class="container">
+                    <div class="cta-box reveal-fade">
+                        <div class="cta-bg-blur"></div>
+                        <div class="cta-inner">
+                            <h2 class="cta-title">Experience the Light</h2>
+                            <p class="cta-text">
+                                LUMIÈREでは、最高の品質とプライバシーを保つため、完全予約制にてご案内しております。<br>
+                                上質な空間と確かな技術で、あなたの美しさを最大限に引き出すお手伝いをさせてください。
+                            </p>
+                            <div class="cta-buttons">
+                                <a href="tel:03-0000-0000" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 03-0000-0000</a>
+                                <a href="#" class="btn btn-gold"><i class="fa-solid fa-calendar-days"></i> Web Reservation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <span class="footer-logo">LUMIÈRE</span>
+                        <p class="footer-addr">
+                            東京都港区南青山 0-0-0<br>
+                            AOYAMA BLDG 1F
+                        </p>
+                    </div>
+                    <div class="footer-hours">
+                        <h3>HOURS</h3>
+                        <p>
+                            Mon - Fri: 11:00 - 21:00<br>
+                            Sat - Sun: 10:00 - 19:00<br>
+                            Closed on Tuesdays
+                        </p>
+                    </div>
+                    <div class="footer-social">
+                        <h3>FOLLOW US</h3>
+                        <div class="social-links">
+                            <a href="#" class="line" aria-label="LINE"><i class="fab fa-line"></i></a>
+                            <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="x-twitter" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 LUMIÈRE Hair Salon. All Rights Reserved. Crafted for Perfection.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating CTA Button (PC) -->
+        <div class="floating-cta" id="floating-cta">
+            <a href="#contact" class="btn-float-reserve">
+                <span class="float-btn-text">BOOK NOW</span>
+                <span class="float-btn-icon"><i class="fa-solid fa-calendar-check"></i></span>
             </a>
-            
-            <nav role="navigation" aria-label="メインナビゲーション">
-                <ul id="nav-list">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#news">NEWS</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#gallery">GALLERY</a></li>
-                    <li><a href="#staff">STAFF</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
-            
-            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-list" aria-label="メニューを開く">
-                <span class="sr-only">メニュー</span>
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            
-            <a href="#contact" class="btn btn-sm" style="padding: 0.6rem 1.2rem; font-size: 0.8rem; display: none; @media (min-width: 769px) { display: inline-block; }">RESERVE</a>
         </div>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-bg">
-                <img src="assets/hero.png" alt="洗練されたヘアスタイルのモデル" loading="eager">
-            </div>
-            <div class="hero-content">
-                <h1>Crafting Your <br>Purest Beauty</h1>
-                <p><span class="inline-block">洗練された技術と、</span><span class="inline-block">妥協のない美への探求</span></p>
-                <a href="#contact" class="btn">Book an Appointment</a>
-            </div>
-        </section>
+        <!-- Mobile Bottom Navigation CTA (Mobile) -->
+        <div class="mobile-cta-bar" id="mobile-cta-bar">
+            <a href="tel:03-0000-0000" class="mobile-cta-item btn-mobile-call">
+                <i class="fa-solid fa-phone"></i><span>CALL US</span>
+            </a>
+            <a href="#contact" class="mobile-cta-item btn-mobile-book">
+                <i class="fa-solid fa-calendar-check"></i><span>RESERVE</span>
+            </a>
+        </div>
 
-        <!-- About Section -->
-        <section class="section-padding container" id="about">
-            <div class="section-title">
-                <span>CONCEPT</span>
-                <h2>Minimalist Luxury</h2>
-            </div>
-            <div class="about-content">
-                <p style="margin-bottom: var(--spacing-md);">
-                    <span class="inline-block">LUMIÈREは、</span><span class="inline-block">単なる美容室ではありません。</span><span class="inline-block">それは、日常の喧騒から離れ、</span><span class="inline-block">自分自身と向き合うための聖域です。</span>
-                    <span class="inline-block">「光」を意味するその名の通り、</span><span class="inline-block">お客様一人ひとりが持つ本来の輝きを、</span><span class="inline-block">最小限の介入で</span><span class="inline-block">最大限に引き出します。</span>
-                </p>
-                <p>
-                    <span class="inline-block">ホワイトとゴールドを基調とした</span><span class="inline-block">ミニマルな空間で、</span><span class="inline-block">計算し尽くされた</span><span class="inline-block">タイポグラフィのように、</span>
-                    <span class="inline-block">無駄を削ぎ落とした</span><span class="inline-block">洗練されたスタイルをご提案いたします。</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- News Section -->
-        <section class="section-padding container" id="news">
-            <div class="section-title">
-                <span>INFORMATION</span>
-                <h2>News & Topics</h2>
-            </div>
-            <div class="news-container">
-                <article class="news-item">
-                    <time class="news-date">2026.05.15</time>
-                    <div class="news-content">
-                        <a href="#" style="font-weight: 500;"><span class="inline-block">新店舗オープンに伴う</span><span class="inline-block">スタッフ募集のお知らせ</span></a>
-                    </div>
-                </article>
-                <article class="news-item">
-                    <time class="news-date">2026.05.01</time>
-                    <div class="news-content">
-                        <a href="#" style="font-weight: 500;"><span class="inline-block">【重要】価格改定と</span><span class="inline-block">新メニュー導入のお知らせ</span></a>
-                    </div>
-                </article>
-                <article class="news-item">
-                    <time class="news-date">2026.04.10</time>
-                    <div class="news-content">
-                        <a href="#" style="font-weight: 500;"><span class="inline-block">ゴールデンウィーク期間中の</span><span class="inline-block">営業について</span></a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="section-padding" id="services" style="background-color: var(--color-bg-soft);">
-            <div class="container">
-                <div class="section-title">
-                    <span>MENU</span>
-                    <h2>Exclusive Services</h2>
+        <!-- Self-made Lightbox Modal -->
+        <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="ギャラリー拡大画像">
+            <button class="lightbox-close" aria-label="ライトボックスを閉じる">&times;</button>
+            <button class="lightbox-prev" aria-label="前の画像へ"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="lightbox-next" aria-label="次の画像へ"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-image">
+                <div class="lightbox-caption">
+                    <span class="lightbox-cat">CATEGORY</span>
+                    <h4 class="lightbox-title">STYLE TITLE</h4>
                 </div>
-                <div class="services-grid">
-                    <article class="service-card">
-                        <i class="fas fa-cut" aria-hidden="true"></i>
-                        <h3>Signature Cut</h3>
-                        <p><span class="inline-block">骨格と毛流れを計算し、</span><span class="inline-block">自宅でも再現性の高い</span><span class="inline-block">洗練されたカットを提供します。</span></p>
-                        <span style="display: block; margin-top: 1rem; font-weight: 600; color: var(--color-accent);">¥12,000〜</span>
-                    </article>
-                    <article class="service-card">
-                        <i class="fas fa-magic" aria-hidden="true"></i>
-                        <h3>Lustre Color</h3>
-                        <p><span class="inline-block">髪の健康を第一に考え、</span><span class="inline-block">透明感と艶を最大限に引き出す</span><span class="inline-block">プレミアムカラー。</span></p>
-                        <span style="display: block; margin-top: 1rem; font-weight: 600; color: var(--color-accent);">¥15,000〜</span>
-                    </article>
-                    <article class="service-card">
-                        <i class="fas fa-spa" aria-hidden="true"></i>
-                        <h3>Silk Spa</h3>
-                        <p><span class="inline-block">厳選されたエッセンスを使用し、</span><span class="inline-block">心身ともに深いリラックスへと</span><span class="inline-block">導くヘッドスパ。</span></p>
-                        <span style="display: block; margin-top: 1rem; font-weight: 600; color: var(--color-accent);">¥8,000〜</span>
-                    </article>
-                </div>
-                <div style="text-align: center; margin-top: var(--spacing-lg);">
-                    <a href="#" class="btn" style="background: transparent; border: 1px solid var(--color-accent); color: var(--color-accent);">View All Menu</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="section-padding" id="gallery">
-            <div class="container">
-                <div class="section-title">
-                    <span>COLLECTION</span>
-                    <h2>Artistic Styles</h2>
-                </div>
-            </div>
-            <div class="container">
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="assets/gallery1.webp" alt="洗練されたハイライトボブスタイル" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/gallery2.webp" alt="ナチュラルなハンサムショートスタイル" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/gallery3.webp" alt="エッジの効いた黒髪切りっぱなしボブ" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/gallery4.webp" alt="艶やかなロングレイヤースタイル" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Staff Section -->
-        <section class="section-padding container" id="staff">
-            <div class="section-title">
-                <span>EXPERTS</span>
-                <h2>Stylists</h2>
-            </div>
-            <div class="staff-grid">
-                <article class="staff-card">
-                    <div class="staff-img">
-                        <img src="assets/owner.webp" alt="Owner & Director: MIYUKI">
-                    </div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">MIYUKI</h3>
-                    <p style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--color-accent); margin-bottom: 1rem;">OWNER / DIRECTOR</p>
-                    <p style="font-size: 0.85rem; max-width: 200px; margin: 0 auto;"><span class="inline-block">お客様一人ひとりの</span><span class="inline-block">本来の美しさを引き出し、</span><span class="inline-block">日常に溶け込む</span><span class="inline-block">洗練されたスタイルを</span><span class="inline-block">提案します。</span></p>
-                </article>
-                <article class="staff-card">
-                    <div class="staff-img">
-                        <img src="assets/stylist.webp" alt="Top Stylist: TAKUMI">
-                    </div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">TAKUMI</h3>
-                    <p style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--color-accent); margin-bottom: 1rem;">TOP STYLIST</p>
-                    <p style="font-size: 0.85rem; max-width: 200px; margin: 0 auto;"><span class="inline-block">トレンドを抑えた</span><span class="inline-block">スタイル提案と、</span><span class="inline-block">丁寧なカウンセリングで</span><span class="inline-block">理想のスタイルを</span><span class="inline-block">実現します。</span></p>
-                </article>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="section-padding" id="faq" style="background-color: var(--color-bg-soft);">
-            <div class="container">
-                <div class="section-title">
-                    <span>QUESTIONS</span>
-                    <h2>Frequently Asked Questions</h2>
-                </div>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <h3 class="faq-question">予約なしでも受け付けていますか？</h3>
-                        <p class="faq-answer"><span class="inline-block">当サロンは</span><span class="inline-block">完全予約制となっております。</span><span class="inline-block">お客様一人ひとりに</span><span class="inline-block">質の高い時間を</span><span class="inline-block">提供するため、</span><span class="inline-block">事前のご予約を</span><span class="inline-block">お願いしております。</span></p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">駐車場はありますか？</h3>
-                        <p class="faq-answer"><span class="inline-block">近隣の提携パーキングを</span><span class="inline-block">ご案内しております。</span><span class="inline-block">詳細はお電話にて</span><span class="inline-block">お問い合わせください。</span></p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">クレジットカードは使用できますか？</h3>
-                        <p class="faq-answer"><span class="inline-block">各種クレジットカード、</span><span class="inline-block">および主要な</span><span class="inline-block">QRコード決済</span><span class="inline-block">（PayPay, LINE Pay等）を</span><span class="inline-block">ご利用いただけます。</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Access Section -->
-        <section class="section-padding container" id="access">
-            <div class="section-title">
-                <span>LOCATION</span>
-                <h2>Access</h2>
-            </div>
-            <div class="access-grid">
-                <div>
-                    <h3 style="font-family: var(--font-serif); margin-bottom: 1rem;">LUMIÈRE Hair Salon</h3>
-                    <p style="margin-bottom: 1.5rem;">
-                        東京都港区南青山 0-0-0<br>
-                        AOYAMA BLDG 1F<br>
-                        <span class="inline-block">「表参道駅」A4出口より</span><span class="inline-block">徒歩5分</span>
-                    </p>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-                        <tr>
-                            <td style="padding: 0.5rem 0; font-weight: 600; width: 100px;">営業時間</td>
-                            <td style="padding: 0.5rem 0;">平日 11:00 - 21:00 / 土日祝 10:00 - 19:00</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0; font-weight: 600;">定休日</td>
-                            <td style="padding: 0.5rem 0;">火曜日 / 第2・第3月曜日</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0; font-weight: 600;">電話番号</td>
-                            <td style="padding: 0.5rem 0;">03-0000-0000</td>
-                        </tr>
-                    </table>
-                </div>
-                <div style="height: 300px; position: relative; border: 1px solid #ddd; overflow: hidden;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4771645343653!2d139.7120921!3d35.665251100000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9fee70f285%3A0x4054b8b23563631c!2z6KGo5Y-C6YGT6aeF!5e0!3m2!1sja!2sjp!4v1778879064757!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="section-padding container" id="contact">
-            <div style="background-color: var(--color-primary); color: var(--color-white); padding: var(--spacing-xl) 10%; text-align: center; border-radius: 2px;">
-                <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: var(--spacing-sm);">Experience the Light</h2>
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--spacing-md); line-height: 1.8;"><span class="inline-block">ご予約・お問い合わせは</span><span class="inline-block">お電話、または</span><span class="inline-block">Web予約にて</span><span class="inline-block">承っております。</span><br><span class="inline-block">上質な空間と</span><span class="inline-block">確かな技術で、</span><span class="inline-block">あなたの魅力を</span><span class="inline-block">最大限に引き出します。</span></p>
-                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="tel:03-0000-0000" class="btn">Call Us: 03-0000-0000</a>
-                    <a href="#" class="btn" style="background-color: var(--color-white); color: var(--color-primary);">Web Reservation</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <img src="assets/logo.png" alt="LUMIÈRE ロゴ" style="height: 30px; filter: brightness(0) invert(1); margin-bottom: 1.5rem;">
-                    <p style="color: rgba(255,255,255,0.6);">
-                        東京都港区南青山 0-0-0<br>
-                        AOYAMA BLDG 1F
-                    </p>
-                </div>
-                <div class="footer-info">
-                    <h3>HOURS</h3>
-                    <p style="color: rgba(255,255,255,0.6);">
-                        Mon - Fri: 11:00 - 21:00<br>
-                        Sat - Sun: 10:00 - 19:00<br>
-                        Closed on Tuesdays
-                    </p>
-                </div>
-                <div class="footer-info">
-                    <h3>FOLLOW US</h3>
-                    <div class="social-links">
-                        <a href="#" class="line" aria-label="LINE"><i class="fab fa-line"></i></a>
-                        <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="x-twitter" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 LUMIÈRE Hair Salon. All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
 
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>

@@ -257,59 +257,65 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Before / After Interactive Slider (Vanilla JS)
   // ==========================================================================
   const baContainer = document.getElementById('ba-slider');
-  const baHandle = document.getElementById('ba-handle');
-  const imgAfter = document.getElementById('img-after');
+  const baHandle    = document.getElementById('ba-handle');
+  const imgAfter    = document.getElementById('img-after');
+  const afterInner  = document.getElementById('after-inner');
 
-  if (baContainer && baHandle && imgAfter) {
+  if (baContainer && baHandle && imgAfter && afterInner) {
     let isDragging = false;
+
+    // after-inner は常にコンテナと同じ幅(px)を維持することで
+    // background-size: 200% auto の基準幅が変わらず完全アライメントを実現
+    function updateAfterInnerWidth() {
+      afterInner.style.width = baContainer.getBoundingClientRect().width + 'px';
+    }
 
     function setSliderPosition(x) {
       const rect = baContainer.getBoundingClientRect();
       let position = ((x - rect.left) / rect.width) * 100;
+      if (position < 5)  position = 5;
+      if (position > 95) position = 95;
 
-      if (position < 0) position = 0;
-      if (position > 100) position = 100;
+      // AFTER div: right-anchoredで幅 = (100-position)%
+      imgAfter.style.width = `${100 - position}%`;
+      baHandle.style.left  = `${position}%`;
 
-      imgAfter.style.width = `${position}%`;
-      baHandle.style.left = `${position}%`;
+      // inner は常にフルコンテナ幅(px)
+      afterInner.style.width = rect.width + 'px';
     }
+
+    // 初期化
+    updateAfterInnerWidth();
 
     // Mouse Events
     baContainer.addEventListener('mousedown', (e) => {
       isDragging = true;
       setSliderPosition(e.clientX);
     });
-
-    window.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
-
+    window.addEventListener('mouseup', () => { isDragging = false; });
     window.addEventListener('mousemove', (e) => {
       if (!isDragging) return;
       e.preventDefault();
       setSliderPosition(e.clientX);
     });
 
-    // Touch Events (Mobile Dragging)
+    // Touch Events (Mobile)
     baContainer.addEventListener('touchstart', (e) => {
       isDragging = true;
       setSliderPosition(e.touches[0].clientX);
     }, { passive: true });
-
-    window.addEventListener('touchend', () => {
-      isDragging = false;
-    });
-
+    window.addEventListener('touchend', () => { isDragging = false; });
     window.addEventListener('touchmove', (e) => {
       if (!isDragging) return;
       setSliderPosition(e.touches[0].clientX);
     }, { passive: false });
 
-    // Handle container resize
+    // リサイズ時
     window.addEventListener('resize', () => {
-      const currentPosition = parseFloat(baHandle.style.left) || 50;
-      imgAfter.style.width = `${currentPosition}%`;
-      baHandle.style.left = `${currentPosition}%`;
+      updateAfterInnerWidth();
+      const pos = parseFloat(baHandle.style.left) || 50;
+      imgAfter.style.width = `${100 - pos}%`;
+      baHandle.style.left  = `${pos}%`;
     });
   }
 

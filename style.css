@@ -31,7 +31,29 @@ html, body {
 body {
   background-color: #FBF9F6;
   color: #1A1A1A;
+  /* 日本語の自然な改行制御 */
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
+
+/* 見出し：両端が均等になる改行（モダンブラウザ対応） */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+/* 日本語見出しのletter-spacingを適切な値に抑える
+   （tracking-widest は英字向けで日本語に過剰なため） */
+h2.font-serif, h3.font-serif {
+  letter-spacing: 0.08em;
+}
+
+/* 本文段落：禁則処理を守りつつ自然に折り返す */
+p, span, li, a {
+  word-break: auto-phrase;
+}
+
 
 /* Custom Gold Gradient & Buttons */
 .text-gold-gradient {
